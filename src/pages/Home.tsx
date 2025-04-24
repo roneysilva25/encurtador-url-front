@@ -1,4 +1,4 @@
-import { Box, Heading, List, Stack } from "@chakra-ui/react"
+import { Heading, List, Stack } from "@chakra-ui/react"
 import { InputUrl } from "../components/ui/input-url"
 import { UrlResult } from "../components/ui/url-result"
 import { useCreateShortenedUrl } from "../hooks/useCreateShortenedUrl"

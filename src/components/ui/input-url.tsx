@@ -14,7 +14,7 @@ export function InputUrl({
     onSubmitValid = () => {},
     isLoading = false
 }: Props) {
-    const { register, handleSubmit, watch, errors } = UseUrlValidation()
+    const { register, handleSubmit, errors } = UseUrlValidation()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         onSubmitValid(trimProtocolFromUrl(data.urlInput))
