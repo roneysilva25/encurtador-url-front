@@ -1,4 +1,4 @@
-import { LiaLinkedin, LiaLinkedinIn } from "react-icons/lia";
+import { LiaLinkedinIn } from "react-icons/lia";
 import { getCurrentYear } from "../../utils/get-current-year";
 import { Box, Flex, Icon, Link, Text } from "@chakra-ui/react";
 import { BsGithub } from "react-icons/bs";

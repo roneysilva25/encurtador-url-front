@@ -1,0 +1,27 @@
+import { Alert, Spinner, Stack } from "@chakra-ui/react";
+import { useParams } from "react-router";
+import { useRedirect } from "../hooks/useRedirect";
+
+export function RedirectToOriginal() {
+    const { shortenedUrlCode } = useParams()
+
+    useRedirect({ shortenedUrlCode: shortenedUrlCode || '' })
+
+    return (
+        <Stack w={"100vw"} h={"87vh"} align={"center"} justify={"center"}>
+            <Alert.Root
+                status={"info"}
+                w={"xl"}
+                borderStartWidth="3px"
+                borderStartColor="colorPalette.600"
+                title="Redirecionando"
+                variant={"surface"}
+            >
+                <Alert.Indicator>
+                    <Spinner size="sm" />
+                </Alert.Indicator>
+                <Alert.Title>Aguarde, estamos te redirecionando para o link original.</Alert.Title>
+            </Alert.Root>
+        </Stack>  
+    )
+}

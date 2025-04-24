@@ -4,16 +4,17 @@ import { ColorModeButton } from "./color-mode";
 
 export function Header() {
     return (
-        <Box h={"70px"} bgColor={"blue.solid"} position={"absolute"} w={"100vw"}>
+        <Box h={"70px"} position={"absolute"} bg={"bg.subtle"} w={"100vw"}>
             <Flex justifyContent={"space-between"} p={4}>
                 <Flex gap={"2"} alignItems={"center"}>
-                    <Icon size={"2xl"} color={"white"}>
+                    <Icon size={"2xl"} color={"blue.500"}>
                         <FaLink />
                     </Icon>
-                    <Text letterSpacing={"wider"} fontSize={"lg"} fontWeight={"bold"} color={"white"}>ENCURTADOR DE URL</Text>
+                    <Text letterSpacing={"wider"} fontSize={"lg"} fontWeight={"bold"} color={"gray.fg"}>ENCURTADOR DE URL</Text>
                 </Flex>
-                <ColorModeButton color={"white"} variant={"plain"} />
+                <ColorModeButton color={"gray.fg"} variant={"plain"} />
             </Flex>
+            <hr />
         </Box>
     )
 }

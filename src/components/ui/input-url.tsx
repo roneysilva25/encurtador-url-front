@@ -3,25 +3,21 @@ import { Inputs, UseUrlValidation } from "../../hooks/useUrlValidation";
 import { Button, Field, Group, Input, InputGroup } from "@chakra-ui/react"
 import { SubmitHandler } from "react-hook-form";
 import { LuLink } from "react-icons/lu";
-import { useIsLoading } from "../../hooks/useIsLoading"
 import { TiArrowRight } from "react-icons/ti";
 
 interface Props {
-    onValid?: (shortenedUrl: string) => void;
-    onError?: () => void
+    onSubmitValid?: (validUrl: string) => void;
+    isLoading?: boolean
 }
 
 export function InputUrl({
-    onValid = () => {},
-    onError = () => {}
+    onSubmitValid = () => {},
+    isLoading = false
 }: Props) {
     const { register, handleSubmit, watch, errors } = UseUrlValidation()
-    const { isLoading, setIsLoading } = useIsLoading()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        setIsLoading(true)
-        onValid(trimProtocolFromUrl(data.urlInput))
-        setIsLoading(false)
+        onSubmitValid(trimProtocolFromUrl(data.urlInput))
     }
 
     return (
