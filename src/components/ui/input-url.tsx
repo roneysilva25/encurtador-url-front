@@ -1,4 +1,3 @@
-import { trimProtocolFromUrl } from "../../utils/trim-protocol-from-string";
 import { Inputs, UseUrlValidation } from "../../hooks/useUrlValidation";
 import { Button, Field, Group, Input, InputGroup } from "@chakra-ui/react"
 import { SubmitHandler } from "react-hook-form";
@@ -17,7 +16,7 @@ export function InputUrl({
     const { register, handleSubmit, errors } = UseUrlValidation()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        onSubmitValid(trimProtocolFromUrl(data.urlInput))
+        onSubmitValid(data.urlInput)
     }
 
     return (

@@ -5,6 +5,6 @@ interface GetOriginalUrlResponse {
 }
 
 export async function getOriginalUrl(shortenedUrlCode: string) {
-    const { data } = await api.get<GetOriginalUrlResponse>(`/${shortenedUrlCode}`)
+    const { data } = await api.get<GetOriginalUrlResponse>(`/url/${shortenedUrlCode}`)
     return data
 }

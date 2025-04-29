@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://mp4b69126ce48afc8a15.free.beeceptor.com",
+    baseURL: "http://localhost:3000",
     headers: {
         "Content-Type": "application/json"
     }
