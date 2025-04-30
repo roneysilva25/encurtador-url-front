@@ -5,7 +5,7 @@ interface CreateShortenedUrlCodeResponse {
 }
 
 export async function createShortenedUrlCode(urlToShorten: string) {
-    const { data } = await api.post<CreateShortenedUrlCodeResponse>("/url", {
+    const { data } = await api.post<CreateShortenedUrlCodeResponse>("/urls", {
         urlToShorten
     });
     return data

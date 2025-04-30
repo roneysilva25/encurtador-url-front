@@ -11,7 +11,7 @@ export function useCreateShortenedUrl() {
         shortenedUrlCode,
         shortenedUrlWithBaseUrl,
         setShortenedUrlCode 
-    } = useShortenedUrlCode({ baseUrl: "localhost:5173" })
+    } = useShortenedUrlCode({ baseUrl: window.location.host })
     
     const { isError, setIsError } = useIsError()
 
@@ -20,17 +20,21 @@ export function useCreateShortenedUrl() {
     useEffect(() => {
         if (urlToShorten !== "") {
             setIsLoading(true)
+            setIsError(false)
             createShortenedUrlCode(urlToShorten)
             .then((value) => {
                 setShortenedUrlCode(value.shortenedUrlCode)
                 setIsError(false)
             })
-            .catch(() => setIsError(true))
+            .catch(() => {
+                setIsError(true)
+                setShortenedUrlCode("")
+            })
             .finally(() => {
                 setIsLoading(false)
             })
         }
-    }, [urlToShorten])
+    }, [setIsError, setIsLoading, setShortenedUrlCode, urlToShorten])
 
     return { shortenedUrlWithBaseUrl, shortenedUrlCode,  setUrlToShorten, isError, isLoading }
 }

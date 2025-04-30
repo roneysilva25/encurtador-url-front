@@ -29,9 +29,11 @@ export function UrlResult({
     }
 
     if (status === "error") {
-        <Alert.Root status={"error"} variant={"surface"}>
-            <Alert.Indicator />
-            <Alert.Title>Houve um erro ao encurtar a sua URL. Tente novamente mais tarde</Alert.Title>
-        </Alert.Root>
+        return (
+            <Alert.Root status={"error"} variant={"surface"}>
+                <Alert.Indicator />
+                <Alert.Title>Houve um erro ao encurtar a sua URL. Tente novamente mais tarde</Alert.Title>
+            </Alert.Root>
+        )
     }
 }
