@@ -1,5 +1,5 @@
 # See it here
-> https://6809a6796261ee00080d86cc--comfy-snickerdoodle-d42db3.netlify.app/
+> https://encurteai.vercel.app
 
 # Light Mode
 ![image](https://github.com/user-attachments/assets/0615fe6a-bae6-43bc-8913-680cf39c188c)
